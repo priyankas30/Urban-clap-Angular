@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh">
+      <!-- Left Block -->
+      <div
+        class="col bg-dark d-flex flex-column justify-content-center align-items-center"
+      >
+        <div>
+          <img src="assets/images/pic4.jpg"  style="height: 350px; width: 680px;">
+          <!----
+          <fa-icon [icon]="faAirFreshener" style="font-size: 54px"></fa-icon>
+        -->
+        </div>
+        <br>
+        <div class="h2" style="color: white;">Welcome to Urban clap!!!</div>
+        <div class="h5" style="color: white;">
+          We are ready to searve you  at your doorstep......
+        </div>
+      </div>
+  
+      <!-- Right Block-->
+      
+      <div
+        class="col bg-light d-flex flex-column justify-content-center align-items-center"
+        [formGroup]="fbFormGroup"
+      >
+     
+        <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+          A simple danger alert—check it out!
+        </div>
+        
+       
+        <div class="h3">Application Login</div>
+  
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            class="form-control"
+            formControlName="username"
+          />
+        </div>
+  
+        <div class="mt-1">
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+  
+        <button
+          class="btn btn-sm btn-dark mt-2 mb-2"
+          [disabled]="!fbFormGroup.valid"
+          (click)="loginProcessHere()" 
+        >
+          Login Here
+        </button>
+  
+        <a routerLink="/register">Register Here</a>
+      </div>
+    </div>
+  </div>
